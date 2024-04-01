@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -137,11 +138,13 @@ fun LemonadeImageAndText(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = onImageClick
+            onClick = onImageClick,
+            shape = RoundedCornerShape(40.dp)
         ) {
             Image(
                 painter = painterResource(imageResourceId),
-                contentDescription = stringResource(descriptionId)
+                contentDescription = stringResource(descriptionId),
+                modifier = Modifier.padding(24.dp)
             )
         }
         Spacer(modifier = Modifier.height(16.dp))
